@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seasonal Tracker - Starbucks Discovery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Starbucks Drink Discovery</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quiz.html">Mood Matcher</a></li>
+                <li><a href="secret-menu.html">Secret Menu</a></li>
+                <li><a href="seasonal.html">Seasonal Tracker</a></li>
+                <li><a href="year-round.html">Year-Round Menu</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="seasonal-hero">
+        <h2>Seasonal Drink Tracker</h2>
+        <p>Track your favorite seasonal drinks and know when they return</p>
+    </section>
+
+    <section class="seasonal-container">
+        
+        <div class="seasonal-section">
+            <h3>Currently Available</h3>
+            <div class="seasonal-grid" id="currentDrinks"></div>
+        </div>
+
+        <div class="ended-section">
+            <h3>Season Ended</h3>
+            <div class="seasonal-grid" id="endedDrinks"></div>
+        </div>
+
+        <div class="seasonal-section">
+            <h3>Coming Soon</h3>
+            <div class="seasonal-grid" id="comingSoon"></div>
+        </div>
+
+        <div class="timeline-section">
+            <h3>Annual Seasonal Timeline</h3>
+            <div class="timeline-items">
+                <div class="timeline-item">
+                    <h4>Sept-Nov: Fall Drinks</h4>
+                    <p>PSL, Apple Crisp, Pumpkin Cream Chai</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Nov-Dec: Holiday Drinks</h4>
+                    <p>Peppermint Mocha, Chestnut Praline, Caramel Brulee</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Jan-Feb: Winter Warmers</h4>
+                    <p>Pistachio Latte - Returns early January</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="favorites-section">
+            <h3>My Favorite Seasonal Drinks (<span id="favCount">0</span>)</h3>
+            <div class="favorites-grid" id="favoritesGrid">
+                <p class="empty-msg">No favorites yet! Click the heart on any drink to add it.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Created by a Starbucks Supervisor who loves helping customers discover new drinks</p>
+        <p>Not affiliated with Starbucks Corp.</p>
+    </footer>
+
+    <script src="seasonal.js"></script>
+    <script src="images.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks Drink Discovery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Starbucks Drink Discovery</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quiz.html">Mood Matcher</a></li>
+                <li><a href="secret-menu.html">Secret Menu</a></li>
+                <li><a href="seasonal.html">Seasonal Tracker</a></li>
+                <li><a href="year-round.html">Year-Round Menu</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Find Your Perfect Starbucks Drink</h2>
+            <p>Discover new favorites, explore secret menu items, and track seasonal drinks!</p>
+            <button id="surpriseBtn" class="surprise-button">SURPRISE ME!</button>
+        </div>
+    </section>
+
+    <section class="weather-section">
+        <div class="weather-box">
+            <h3>Today's Weather in St. Louis</h3>
+            <div id="weatherDisplay">
+                <p>Loading weather...</p>
+            </div>
+            <div id="weatherRecommendation"></div>
+        </div>
+    </section>
+
+    <section class="quick-links">
+        <h2>What Are You Looking For?</h2>
+        <div class="link-container">
+            <div class="link-card">
+                <h3>Take the Quiz</h3>
+                <p>Answer a few questions and get personalized drink recommendations</p>
+                <a href="quiz.html"><button>Start Quiz</button></a>
+            </div>
+            <div class="link-card">
+                <h3>Secret Menu</h3>
+                <p>Browse exclusive drinks and learn how to order them</p>
+                <a href="secret-menu.html"><button>Explore Secrets</button></a>
+            </div>
+            <div class="link-card">
+                <h3>Seasonal Drinks</h3>
+                <p>Track your favorite seasonal drinks and know when they return</p>
+                <a href="seasonal.html"><button>View Seasonal</button></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="advice-section">
+        <h2>Coffee Wisdom of the Day</h2>
+        <div id="adviceDisplay">
+            <p>Loading advice...</p>
+        </div>
+        <button id="newAdviceBtn">Get New Advice</button>
+    </section>
+
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Random Drink</h2>
+            <div id="randomDrink"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created by a Starbucks Supervisor who loves helping customers discover new drinks</p>
+        <p>Not affiliated with Starbucks Corp.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="images.js"></script>
+</body>
+</html>

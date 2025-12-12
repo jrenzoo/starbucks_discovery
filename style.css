@@ -1,0 +1,941 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #00704A;
+    color: white;
+    padding: 20px 40px;
+    border-bottom: 3px solid #000;
+}
+
+.logo h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+nav ul li a {
+    color: #00704A;
+    background-color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    font-weight: bold;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+.hero {
+    background-color: #f0f0f0;
+    border-bottom: 2px dashed #ccc;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #00704A;
+}
+
+.hero-content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.surprise-button {
+    background-color: #00704A;
+    color: white;
+    border: 3px solid #000;
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.surprise-button:hover {
+    background-color: #005a3a;
+}
+
+.weather-section {
+    background-color: white;
+    padding: 40px 20px;
+}
+
+.weather-box {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border: 2px solid #000;
+}
+
+.weather-box h3 {
+    color: #00704A;
+    margin-bottom: 20px;
+    font-size: 24px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #00704A;
+}
+
+#weatherDisplay {
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: white;
+    border: 2px solid #ddd;
+}
+
+.quick-links {
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+}
+
+#weatherRecommendation {
+    background-color: #00704A;
+    color: white;
+    padding: 15px;
+    margin-top: 15px;
+    border: 2px solid #000;
+    font-size: 16px;
+}
+
+.quick-links h2 {
+    color: #00704A;
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #00704A;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.link-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 30px auto 0;
+}
+
+.link-card {
+    background-color: white;
+    padding: 25px;
+    border: 2px solid #000;
+    width: 300px;
+}
+
+.link-card:hover {
+    background-color: #f9f9f9;
+    transform: translateY(-2px);
+}
+
+.link-card h3 {
+    color: #00704A;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.link-card p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.advice-section {
+    background-color: #fff3cd;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid #ffc107;
+    border-bottom: 2px solid #ffc107;
+}
+
+.link-card button {
+    background-color: #00704A;
+    color: white;
+    border: 2px solid #000;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+.link-card button:hover {
+    background-color: #005a3a;
+}
+
+.advice-section h2 {
+    color: #856404;
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+#adviceDisplay {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    padding: 25px;
+    background-color: white;
+    border: 2px solid #000;
+    font-size: 18px;
+    font-style: italic;
+}
+
+#newAdviceBtn {
+    background-color: #856404;
+    color: white;
+    border: 2px solid #000;
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#newAdviceBtn:hover {
+    background-color: #6c4f03;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    border: 3px solid #00704A;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    color: #333;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+#randomDrink {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+}
+
+#randomDrink h3 {
+    color: #00704A;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 3px solid #000;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.quiz-hero {
+    background-color: #00704A;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-bottom: 3px solid #000;
+}
+
+.quiz-hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.quiz-hero p {
+    font-size: 20px;
+}
+
+.quiz-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.quiz-box {
+    background-color: white;
+    padding: 50px;
+    border: 3px solid #000;
+    box-shadow: 5px 5px 0px #00704A;
+}
+
+.question-block {
+    margin-bottom: 40px;
+}
+
+.question-block h3 {
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #00704A;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #00704A;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.option-btn {
+    padding: 25px 20px;
+    background-color: #f5f5f5;
+    border: 3px solid #000;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.option-btn:hover {
+    background-color: #00704A;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 3px 3px 0px #000;
+}
+
+.hidden {
+    display: none;
+}
+
+.option-btn.selected {
+    background-color: #00704A;
+    color: white;
+    border: 3px solid #000;
+    box-shadow: 5px 5px 0px #000;
+}
+
+.result-box {
+    background-color: white;
+    padding: 50px;
+    border: 3px solid #00704A;
+    text-align: center;
+    box-shadow: 8px 8px 0px #00704A;
+}
+
+.result-box h2 {
+    color: #00704A;
+    font-size: 38px;
+    margin-bottom: 35px;
+    text-decoration: underline;
+}
+
+#drinkResult {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border: 3px solid #000;
+    margin-bottom: 35px;
+}
+
+#drinkResult h3 {
+    font-size: 32px;
+    color: #00704A;
+    margin-bottom: 20px;
+}
+
+#drinkResult p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+#drinkResult p strong {
+    color: #00704A;
+}
+
+#retakeBtn {
+    background-color: #00704A;
+    color: white;
+    border: 3px solid #000;
+    padding: 18px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 4px 4px 0px #000;
+}
+
+#retakeBtn:hover {
+    background-color: #005a3a;
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 0px #000;
+}
+
+.secret-hero {
+    background-color: #00704A;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-bottom: 3px solid #000;
+}
+
+.secret-hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.secret-hero p {
+    font-size: 20px;
+}
+
+.secret-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.search-bar {
+    margin-bottom: 30px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #000;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 12px 20px;
+    background-color: white;
+    border: 2px solid #000;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.filter-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.filter-btn.active {
+    background-color: #00704A;
+    color: white;
+}
+
+.drinks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.drink-card {
+    background-color: white;
+    border: 2px solid #000;
+    padding: 20px;
+}
+
+.drink-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 4px 4px 0px #000;
+}
+
+.drink-img {
+    width: 100%;
+    height: 180px;
+    background-color: #ddd;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    font-size: 12px;
+    color: #666;
+}
+
+.drink-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #00704A;
+}
+
+.drink-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #000;
+    font-size: 11px;
+    text-transform: capitalize;
+}
+
+.view-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #00704A;
+    color: white;
+    border: 2px solid #000;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.view-btn:hover {
+    background-color: #005a3a;
+}
+
+.modal-desc {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.recipe-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 2px solid #000;
+    margin-bottom: 20px;
+}
+
+.recipe-box h3 {
+    color: #00704A;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.recipe-box p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.seasonal-hero {
+    background-color: #00704A;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-bottom: 3px solid #000;
+}
+
+.seasonal-hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.seasonal-hero p {
+    font-size: 20px;
+}
+
+.seasonal-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.seasonal-section {
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border: 2px solid #000;
+}
+
+.seasonal-section h3 {
+    font-size: 24px;
+    color: #00704A;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #00704A;
+}
+
+.seasonal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.seasonal-card {
+    background-color: white;
+    border: 2px solid #000;
+    padding: 20px;
+}
+
+.seasonal-img {
+    width: 100%;
+    height: 150px;
+    background-color: #ddd;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    font-size: 12px;
+    color: #666;
+}
+
+.seasonal-card h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #00704A;
+}
+
+.status {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.status.available {
+    color: #2a9d8f;
+}
+
+.status.coming {
+    color: #d62828;
+}
+
+.seasonal-card .desc {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.heart-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid #000;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.heart-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.heart-btn.favorited {
+    background-color: #00704A;
+    color: white;
+}
+
+.timeline-section {
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border: 2px solid #000;
+}
+
+.timeline-section h3 {
+    font-size: 24px;
+    color: #00704A;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #00704A;
+}
+
+.timeline-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.timeline-item {
+    background-color: white;
+    padding: 20px;
+    border: 2px solid #000;
+}
+
+.timeline-item h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #00704A;
+}
+
+.timeline-item p {
+    font-size: 13px;
+    color: #666;
+}
+
+.favorites-section {
+    padding: 30px;
+    background-color: #fff3cd;
+    border: 2px solid #ffc107;
+}
+
+.favorites-section h3 {
+    font-size: 24px;
+    color: #856404;
+    margin-bottom: 25px;
+}
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.fav-card {
+    background-color: white;
+    border: 2px solid #000;
+    padding: 20px;
+}
+
+.fav-card h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #00704A;
+}
+
+.remove-btn {
+    width: 100%;
+    padding: 8px;
+    background-color: #00704A;
+    color: white;
+    border: 2px solid #000;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.remove-btn:hover {
+    background-color: #005a3a;
+}
+
+.empty-msg {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 20px;
+}
+
+.ended-section {
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #ffe6e6;
+    border: 2px solid #000;
+}
+
+.ended-section h3 {
+    font-size: 24px;
+    color: #d62828;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #d62828;
+}
+
+.ended-card {
+    opacity: 0.7;
+}
+
+.status.ended {
+    color: #d62828;
+}
+
+.year-round-hero {
+    background-color: #00704A;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-bottom: 3px solid #000;
+}
+
+.year-round-hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.year-round-hero p {
+    font-size: 20px;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.menu-category {
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: white;
+    border: 3px solid #000;
+}
+
+.menu-category h3 {
+    font-size: 26px;
+    color: #00704A;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #00704A;
+}
+
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.menu-drink {
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border: 2px solid #000;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.menu-drink:hover {
+    background-color: #00704A;
+    color: white;
+    cursor: pointer;
+}
+
+.drink-info-img {
+    width: 100%;
+    height: 250px;
+    background-color: #ddd;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.nutrition-info {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 2px solid #000;
+    margin-top: 20px;
+}
+
+.nutrition-info h3 {
+    color: #00704A;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.nutrition-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info-note {
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+    
+    .logo h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    nav ul li a {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .hero-content h2 {
+        font-size: 24px;
+    }
+    
+    .surprise-button {
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+    
+    .link-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .link-card {
+        width: 90%;
+        max-width: 350px;
+    }
+    
+    .options {
+        grid-template-columns: 1fr;
+    }
+    
+    .quiz-box {
+        padding: 30px 20px;
+    }
+    
+    .option-btn {
+        padding: 20px 15px;
+        font-size: 16px;
+    }
+    
+    .quiz-hero h2 {
+        font-size: 32px;
+    }
+    
+    .result-box {
+        padding: 30px 20px;
+    }
+}
